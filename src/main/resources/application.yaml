@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: jwt-auth-system
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/onedao_db?createDatabaseIfNotExist=true
+    username: root
+    password: your_mysql_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+jwt:
+  secret: ThisIsAVeryLongSecretKeyForJwtSigningMin32Chars
+  expiration: 3600000   # 1 hour in milliseconds
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
